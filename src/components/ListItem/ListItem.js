@@ -1,18 +1,15 @@
 import React from "react";
 import "../../App.css";
 
-export default function ListItem({ text, check, deleteHandler }) {
-  const [strike, setStrike] = React.useState(check);
+export default function ListItem({ text, check, deleteHandler, checkHandler }) {
   return (
     <div className="ListItem">
       <input
         type="checkbox"
-        defaultChecked={check ? "checked" : ""}
-        onChange={(event) => {
-          setStrike(event.target.checked);
-        }}
+        checked={check ? "checked" : ""}
+        onChange={checkHandler}
       />
-      {strike ? <strike>{text}</strike> : <p>{text}</p>}
+      {check ? <strike>{text}</strike> : <p>{text}</p>}
       <button onClick={deleteHandler}>x</button>
     </div>
   );

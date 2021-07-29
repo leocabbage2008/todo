@@ -1,14 +1,15 @@
 import React from "react";
 import ListItem from "../ListItem/ListItem.js";
 
-export default function List({ todos, deleteHandler }) {
+export default function List({ todos, deleteHandler, checkHandler }) {
   return (
     <div>
-      {todos.map((obj) => (
+      {todos.map((obj, num) => (
         <ListItem
           text={obj.text}
           check={obj.check}
-          deleteHandler={deleteHandler}
+          deleteHandler={() => deleteHandler(num)}
+          checkHandler={() => checkHandler(num)}
         />
       ))}
     </div>
