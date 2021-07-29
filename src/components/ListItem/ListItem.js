@@ -2,7 +2,6 @@ import React from "react";
 import "../../App.css";
 
 export default function ListItem({ text, check, deleteHandler }) {
-  const [strike, setStrike] = React.useState(check);
   return (
     <div>
       <input
