@@ -38,12 +38,6 @@
   }
 }
 
-.listItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.strike {
-  text-decoration: line-through;
+.ListItem > * {
+  display: inline;
 }
