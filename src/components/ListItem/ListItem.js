@@ -2,7 +2,6 @@ import React from "react";
 import "../../App.css";
 
 export default function ListItem({ text, check, deleteHandler }) {
-  const [strike, setStrike] = React.useState(check);
   return (
     <div>
       <input
@@ -12,7 +11,7 @@ export default function ListItem({ text, check, deleteHandler }) {
           setStrike(event.target.checked);
         }}
       />
-      <span className={`${strike ? "strike" : ""}`}>{text}</span>
+      {strike?<strike>{text}</strike>:<p>{text}</p>}
       <button onClick={deleteHandler}>x</button>
     </div>
   );
