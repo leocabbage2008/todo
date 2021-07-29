@@ -12,7 +12,7 @@ export default function ListItem({ text, check, deleteHandler }) {
           setStrike(event.target.checked);
         }}
       />
-      <span className={`${strike ? "strike" : ""}`}>{text}</span>
+      {strike?<strike>{text}</strike>:<p>{text}</p>}
       <button onClick={deleteHandler}>x</button>
     </div>
   );
